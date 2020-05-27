@@ -348,3 +348,13 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+# Additional ignores
+appsettings.Development.json
+cognitiveModels.Development.json
+/Src/WriteThatDownBot/Deployment/*.txt
+/Src/WriteThatDownBot/Deployment/Resources/Dispatch/
+/Src/WriteThatDownBot/Deployment/Resources/LU/**/*.json
+/Src/WriteThatDownBot/Deployment/Resources/QnA/**/*.json
+/Src/WriteThatDownBot/code.zip
+/Src/WriteThatDownBot/.deployment
