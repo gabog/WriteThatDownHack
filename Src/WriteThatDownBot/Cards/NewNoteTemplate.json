@@ -1,0 +1,58 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.2",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Note title:"
+    },
+    {
+      "type": "Input.Text",
+      "id": "Title",
+      "placeholder": "Enter a short title",
+      "value": "${title}"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Type:"
+    },
+    {
+      "type": "Input.ChoiceSet",
+      "id": "Type",
+      "style": "expanded",
+      "value": "${type}",
+      "choices": [
+        {
+          "title": "Private",
+          "value": "private"
+        },
+        {
+          "title": "Shared",
+          "value": "shared"
+        }
+      ],
+      "placeholder": "Placeholder text"
+    },
+    {
+      "type": "TextBlock",
+      "text": "Note Body:"
+    },
+    {
+      "type": "Input.Text",
+      "id": "NoteBody",
+      "placeholder": "Type in a note (you can use markdown for formatting).",
+      "value": "${noteBody}",
+      "isMultiline": true
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "data": {
+        "submitLocation": "messagingExtensionFetchTask"
+      },
+      "title": "Save"
+    }
+  ]
+}

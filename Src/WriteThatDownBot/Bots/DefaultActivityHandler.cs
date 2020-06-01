@@ -18,7 +18,7 @@ using WriteThatDownBot.Models;
 
 namespace WriteThatDownBot.Bots
 {
-    public class DefaultActivityHandler<T> : TeamsActivityHandler
+    public partial class DefaultActivityHandler<T> : TeamsActivityHandler
         where T : Dialog
     {
         private readonly Dialog _dialog;

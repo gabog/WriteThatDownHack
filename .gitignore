@@ -358,3 +358,4 @@ cognitiveModels.Development.json
 /Src/WriteThatDownBot/Deployment/Resources/QnA/**/*.json
 /Src/WriteThatDownBot/code.zip
 /Src/WriteThatDownBot/.deployment
+/Src/WriteThatDownBot/.config

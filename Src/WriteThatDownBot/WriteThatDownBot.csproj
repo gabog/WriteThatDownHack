@@ -11,6 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Cards\NewNoteTemplate.json" />
+    <Content Remove="Cards\NoteListTemplate.json" />
+    <Content Remove="Cards\NoteTemplate.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Cards\NewNoteTemplate.json" />
+    <EmbeddedResource Include="Cards\NoteListTemplate.json" />
+    <EmbeddedResource Include="Cards\NoteTemplate.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AdaptiveCards.Templating" Version="1.0.0-rc.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
     <PackageReference Include="Microsoft.Azure.CognitiveServices.ContentModerator" Version="2.0.0" />
     <PackageReference Include="Microsoft.Azure.CognitiveServices.Language" Version="1.0.1-preview" />
@@ -22,6 +35,7 @@
     <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.Core" Version="4.9.1" />
     <PackageReference Include="Microsoft.Bot.Builder.LanguageGeneration" Version="4.9.1" />
     <PackageReference Include="Microsoft.Bot.Solutions" Version="1.0.0" />
+    <PackageReference Include="ReverseMarkdown" Version="3.11.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -79,6 +93,10 @@
     <None Update="Responses\OnboardingResponses.zh-cn.lg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>

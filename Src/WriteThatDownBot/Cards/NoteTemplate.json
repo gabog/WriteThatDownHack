@@ -1,0 +1,70 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.2",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "size": "Medium",
+      "weight": "Bolder",
+      "id":  "FromMessage", 
+      "text": "XYZ shared a note with you"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "Image",
+              "style": "Person",
+              "id": "IconUrl",
+              "url": "https://raw.githubusercontent.com/gabog/RequestResponseBotGateway/master/sharednote.png",
+              "size": "Medium"
+            }
+          ],
+          "width": "auto"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "size": "Medium",
+              "weight": "Bolder",
+              "text": "${title}"
+            },
+            {
+              "type": "TextBlock",
+              "text": "${noteBody}",
+              "wrap": true
+            }
+          ],
+          "width": "stretch"
+        }
+      ]
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        {
+          "title": "Created by:",
+          "value": "${messageActionsPayload.from.user.displayName}"
+        },
+        {
+          "title": "Date:",
+          "value": "${messageActionsPayload.createdDateTime}"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.OpenUrl",
+      "id": "GoToMessage",
+      "title": "Go to message",
+      "url": "${messageLinkUrl}"
+    }
+  ]
+}

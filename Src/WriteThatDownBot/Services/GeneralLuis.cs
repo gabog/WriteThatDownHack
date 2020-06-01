@@ -38,7 +38,8 @@ namespace Luis
             ShowNext,
             ShowPrevious,
             StartOver,
-            Stop
+            Stop,
+            ShowNotes
         };
         [JsonProperty("intents")]
         public Dictionary<Intent, IntentScore> Intents;

@@ -1,0 +1,38 @@
+{
+  "id": "1e7ce7a0-b437-44f4-bd5e-10ccd24e9771",
+  "type": 0,
+  "title": "Note title",
+  "noteBody": "_Some_ text will go here in __markdown__.",
+  "messageLinkUrl": "https://teams.microsoft.com/l/message/19:0f65454e-84c1-4979-9deb-e7ac73cc3f94_4c0039e5-6816-48e8-b313-f77691ff1c5e@unq.gbl.spaces/1590724962927?context=%7B%22contextType%22:%22chat%22%7D",
+  "messageActionsPayload": {
+    "id": "1590724962927",
+    "replyToId": null,
+    "messageType": null,
+    "createdDateTime": "05/29/2020 04:02:42",
+    "lastModifiedDateTime": null,
+    "deleted": false,
+    "subject": "",
+    "summary": null,
+    "importance": "normal",
+    "locale": "en-us",
+    "from": {
+      "user": {
+        "displayName": "John Doe"
+      },
+      "application": {
+        "applicationIdentityType": "bot",
+        "id": "4c0039e5-6816-48e8-b313-f77691ff1c5e",
+        "displayName": "GGDebugBot"
+      },
+      "conversation": null
+    },
+    "body": {
+      "contentType": "html",
+      "content": "<p>Hello.</p>"
+    },
+    "attachmentLayout": null,
+    "attachments": [],
+    "mentions": [],
+    "reactions": []
+  }
+}
