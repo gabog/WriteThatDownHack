@@ -20,7 +20,7 @@
               "type": "Image",
               "style": "Person",
               "id": "IconUrl",
-              "url": "https://raw.githubusercontent.com/gabog/RequestResponseBotGateway/master/sharednote.png",
+              "url": "${if(type == 'private', 'https://raw.githubusercontent.com/gabog/RequestResponseBotGateway/master/privatenote.png?42', 'https://raw.githubusercontent.com/gabog/RequestResponseBotGateway/master/sharednote.png?42')}",
               "size": "Medium"
             }
           ],

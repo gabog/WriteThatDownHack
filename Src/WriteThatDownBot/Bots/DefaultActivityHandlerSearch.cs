@@ -11,6 +11,7 @@ using Microsoft.Bot.Builder;
 using Microsoft.Bot.Schema;
 using Microsoft.Bot.Schema.Teams;
 using Newtonsoft.Json.Linq;
+using WriteThatDownBot.Cards;
 using WriteThatDownBot.Models;
 using WriteThatDownBot.Services;
 
@@ -34,7 +35,7 @@ namespace WriteThatDownBot.Bots
                 var previewCard = new ThumbnailCard
                 {
                     Title = note.Title,
-                    Images = new List<CardImage> { new CardImage(note.GetNoteIconUrl(), "Icon") },
+                    Images = new List<CardImage> { new CardImage(GetNoteIconUrl(note), "Icon") },
                     Tap = new CardAction
                     {
                         Type = "invoke",
@@ -73,7 +74,7 @@ namespace WriteThatDownBot.Bots
                 throw new Exception("Unable to create a note from the selected item.");
             }
 
-            var card = GetAdaptiveCard("NoteTemplate.json", selectedNote);
+            var card = NoteCardFactory.GetAdaptiveCard("NoteTemplate.json", selectedNote);
 
             var fromMessage = (AdaptiveTextBlock)card.Body.Find(ae => ae.Id == "FromMessage");
             fromMessage.Text = $"{turnContext.Activity.From.Name} shared a note with you.";
@@ -169,6 +170,20 @@ namespace WriteThatDownBot.Bots
                     },
                 },
             };
+        }
+
+        /// <summary>
+        /// Helper to get the icon to show for the note.
+        /// </summary>
+        public string GetNoteIconUrl(Note note)
+        {
+            var imageName = "sharednote.png";
+            if (note.Type == NoteType.Private)
+            {
+                imageName = "privatenote.png?42";
+            }
+
+            return $"https://raw.githubusercontent.com/gabog/RequestResponseBotGateway/master/{imageName}";
         }
     }
 }

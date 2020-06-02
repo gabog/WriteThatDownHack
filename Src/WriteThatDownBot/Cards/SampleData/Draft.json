@@ -1,0 +1,104 @@
+{
+  "notes": [
+    {
+      "id": "1",
+      "type": "private",
+      "title": "Review my PRs before the end of the day",
+      "noteBody": "",
+      "messageLinkUrl": "",
+      "messageActionsPayload": {
+        "id": null,
+        "replyToId": null,
+        "messageType": null,
+        "createdDateTime": null,
+        "lastModifiedDateTime": null,
+        "deleted": null,
+        "subject": null,
+        "summary": null,
+        "importance": null,
+        "locale": null,
+        "from": null,
+        "body": null,
+        "attachmentLayout": null,
+        "attachments": null,
+        "mentions": null,
+        "reactions": null
+      }
+    },
+    {
+      "id": "2",
+      "type": "private",
+      "title": "Andrew is the best person to reach on Teams issues",
+      "noteBody": "",
+      "messageLinkUrl": "",
+      "messageActionsPayload": {
+        "id": null,
+        "replyToId": null,
+        "messageType": null,
+        "createdDateTime": null,
+        "lastModifiedDateTime": null,
+        "deleted": null,
+        "subject": null,
+        "summary": null,
+        "importance": null,
+        "locale": null,
+        "from": null,
+        "body": null,
+        "attachmentLayout": null,
+        "attachments": null,
+        "mentions": null,
+        "reactions": null
+      }
+    },
+    {
+      "id": "3",
+      "type": "shared",
+      "title": "The right answer is always 42",
+      "noteBody": "",
+      "messageLinkUrl": "",
+      "messageActionsPayload": {
+        "id": null,
+        "replyToId": null,
+        "messageType": null,
+        "createdDateTime": null,
+        "lastModifiedDateTime": null,
+        "deleted": null,
+        "subject": null,
+        "summary": null,
+        "importance": null,
+        "locale": null,
+        "from": null,
+        "body": null,
+        "attachmentLayout": null,
+        "attachments": null,
+        "mentions": null,
+        "reactions": null
+      }
+    },
+    {
+      "id": "4",
+      "type": "shared",
+      "title": "Improve Azure page design for cognitive services",
+      "noteBody": "",
+      "messageLinkUrl": "",
+      "messageActionsPayload": {
+        "id": null,
+        "replyToId": null,
+        "messageType": null,
+        "createdDateTime": null,
+        "lastModifiedDateTime": null,
+        "deleted": null,
+        "subject": null,
+        "summary": null,
+        "importance": null,
+        "locale": null,
+        "from": null,
+        "body": null,
+        "attachmentLayout": null,
+        "attachments": null,
+        "mentions": null,
+        "reactions": null
+      }
+    }
+  ]
+}

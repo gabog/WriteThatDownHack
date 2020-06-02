@@ -1,0 +1,46 @@
+{
+  "notes": [
+    {
+      "type": "shared",
+      "title": "Matt",
+      "noteBody": "Blue",
+      "messageLinkUrl": "https://teams.microsoft.com/l/message/19:0f65454e-84c1-4979-9deb-e7ac73cc3f94_4c0039e5-6816-48e8-b313-f77691ff1c5e@unq.gbl.spaces/1590724962927?context=%7B%22contextType%22:%22chat%22%7D"
+    },
+    {
+      "type": "private",
+      "title": "David",
+      "noteBody": "Pink"
+    },
+    {
+      "type": "shared",
+      "title": "Thomas",
+      "noteBody": "Pink2",
+      "messageLinkUrl": "https://teams.microsoft.com/l/message/19:0f65454e-84c1-4979-9deb-e7ac73cc3f94_4c0039e5-6816-48e8-b313-f77691ff1c5e@unq.gbl.spaces/1590724962927?context=%7B%22contextType%22:%22chat%22%7D"
+    },
+    {
+      "id": "1",
+      "type": "private",
+      "title": "Review my PRs before the end of the day",
+      "noteBody": "Some note _body_ goes here",
+      "messageLinkUrl": "",
+      "messageActionsPayload": {
+        "id": null,
+        "replyToId": null,
+        "messageType": null,
+        "createdDateTime": null,
+        "lastModifiedDateTime": null,
+        "deleted": null,
+        "subject": null,
+        "summary": null,
+        "importance": null,
+        "locale": null,
+        "from": null,
+        "body": null,
+        "attachmentLayout": null,
+        "attachments": null,
+        "mentions": null,
+        "reactions": null
+      }
+    }
+  ]
+}

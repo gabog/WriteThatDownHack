@@ -24,6 +24,7 @@ using Microsoft.Bot.Solutions.Skills;
 using Microsoft.Bot.Solutions.Skills.Dialogs;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
+using WriteThatDownBot.Cards;
 using WriteThatDownBot.Models;
 using WriteThatDownBot.Services;
 
@@ -321,72 +322,10 @@ namespace WriteThatDownBot.Dialogs
 
                             case GeneralLuis.Intent.ShowNotes:
                             {
-                                AdaptiveCard adaptiveCard;
-                                var cardResourcePath = "WriteThatDownBot.Cards.NoteListTemplate.json";
-
-                                using (var stream = GetType().Assembly.GetManifestResourceStream(cardResourcePath))
-                                {
-                                    using (var reader = new StreamReader(stream))
-                                    {
-                                        var cardText = await reader.ReadToEndAsync();
-                                        adaptiveCard = JsonConvert.DeserializeObject<AdaptiveCard>(cardText);
-                                    }
-                                }
-
                                 var notesService = new MockNoteService();
                                 var notes = await notesService.FindAsync("*");
-                                var container = (AdaptiveContainer)adaptiveCard.Body.Find(p => p.Id == "Notes");
+                                var adaptiveCardAttachment = NoteCardFactory.CreateNoteListAttachment(notes);
 
-                                foreach (var note in notes)
-                                {
-                                    var image = new AdaptiveImage(note.GetNoteIconUrl())
-                                    {
-                                        Style = AdaptiveImageStyle.Person,
-                                        Size = AdaptiveImageSize.Medium
-                                    };
-                                    var column1 = new AdaptiveColumn { Width = "auto" };
-                                    column1.Items.Add(image);
-
-                                    var titleText = new AdaptiveTextBlock(note.Title)
-                                    {
-                                        Size = AdaptiveTextSize.Medium,
-                                        Weight = AdaptiveTextWeight.Bolder
-                                    };
-                                    var bodyText = new AdaptiveTextBlock(note.NoteBody)
-                                    {
-                                        Wrap = true
-                                    };
-
-                                    var column2 = new AdaptiveColumn { Width = "stretch" };
-                                    column2.Items.Add(titleText);
-                                    column2.Items.Add(bodyText);
-
-                                    if (!string.IsNullOrWhiteSpace(note.MessageLinkUrl))
-                                    {
-                                        //var linkUrl = new AdaptiveTextBlock($"[View]({note.MessageLinkUrl})");
-                                        var linkUrl = new AdaptiveActionSet();
-                                        var adaptiveOpenUrlAction = new AdaptiveOpenUrlAction
-                                        {
-                                            Title = "View",
-                                            UrlString = note.MessageLinkUrl
-                                        };
-                                        linkUrl.Actions.Add(adaptiveOpenUrlAction);
-                                        column2.Items.Add(linkUrl); }
-
-
-                                    var columnSet = new AdaptiveColumnSet();
-                                    columnSet.Columns.Add(column1);
-                                    columnSet.Columns.Add(column2);
-                                    container.Items.Add(columnSet);
-                                }
-
-                                var adaptiveCardAttachment = new Attachment()
-                                {
-                                    ContentType = AdaptiveCard.ContentType,
-                                    Content = adaptiveCard,
-                                };
-
-                                // If current dialog is a skill, allow it to handle its own help intent.
                                 await innerDc.Context.SendActivityAsync(MessageFactory.Attachment(adaptiveCardAttachment), cancellationToken);
                                 await innerDc.RepromptDialogAsync(cancellationToken);
                                 interrupted = true;

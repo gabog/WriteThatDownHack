@@ -6,7 +6,54 @@
     {
       "type": "Container",
       "id": "Notes",
-      "items": []
+      "items": [
+        {
+          "type": "ColumnSet",
+          "$data": "${notes}",
+          "columns": [
+            {
+              "type": "Column",
+              "width": "auto",
+              "items": [
+                {
+                  "type": "Image",
+                  "size": "Medium",
+                  "style": "Person",
+                  "url": "${if(type == 'private', 'https://raw.githubusercontent.com/gabog/RequestResponseBotGateway/master/privatenote.png?42', 'https://raw.githubusercontent.com/gabog/RequestResponseBotGateway/master/sharednote.png?42')}"
+                }
+              ]
+            },
+            {
+              "type": "Column",
+              "width": "stretch",
+              "items": [
+                {
+                  "type": "TextBlock",
+                  "size": "Medium",
+                  "weight": "Bolder",
+                  "text": "${title}"
+                },
+                {
+                  "type": "TextBlock",
+                  "text": "${noteBody}",
+                  "wrap": true
+                },
+                {
+                  "type": "ActionSet",
+                  "$when": "${length(messageLinkUrl) > 0}",
+                  "actions": [
+                    {
+                      "type": "Action.OpenUrl",
+                      "url": "${messageLinkUrl}",
+                      "title": "View"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

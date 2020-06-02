@@ -33,19 +33,5 @@ namespace WriteThatDownBot.Models
 
         [JsonProperty("messageActionsPayload")]
         public MessageActionsPayload MessageActionsPayload { get; set; }
-
-        /// <summary>
-        /// Helper to get the icon to show for the note.
-        /// </summary>
-        public string GetNoteIconUrl()
-        {
-            var imageName = "sharednote.png";
-            if (Type == NoteType.Private)
-            {
-                imageName = "privatenote.png?42";
-            }
-
-            return $"https://raw.githubusercontent.com/gabog/RequestResponseBotGateway/master/{imageName}";
-        }
     }
 }
