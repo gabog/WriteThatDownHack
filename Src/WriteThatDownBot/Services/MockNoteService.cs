@@ -69,7 +69,8 @@ namespace WriteThatDownBot.Services
                 result.AddRange(_privateNotes.Where(note => note.Title.Contains(query, StringComparison.InvariantCultureIgnoreCase)));
                 result.AddRange(_sharedNotes.Where(note => note.Title.Contains(query, StringComparison.InvariantCultureIgnoreCase)));
             }
-            return Task.FromResult(result);
+
+            return Task.FromResult(result.OrderBy(note => note.Title).ToList());
         }
 
         public Task AddNoteAsync(Note note)
