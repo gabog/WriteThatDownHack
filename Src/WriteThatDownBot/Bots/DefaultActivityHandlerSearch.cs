@@ -48,6 +48,7 @@ namespace WriteThatDownBot.Bots
                     ContentType = HeroCard.ContentType,
                     Content = new HeroCard { Title = note.Title },
                     Preview = previewCard.ToAttachment()
+                    // Preview =  new Attachment(AdaptiveCard.ContentType, content: NoteCardFactory.GetAdaptiveCard("NoteTemplate.json", note))
                 };
 
                 return attachment;
